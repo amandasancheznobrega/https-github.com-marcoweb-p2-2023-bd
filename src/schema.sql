@@ -1,6 +1,6 @@
-CREATE DATABASE questionario;
+CREATE DATABASE perguntas;
 
-USE questionario;
+USE perguntas;
 
 CREATE TABLE quizzes(
     id INT PRIMARY KEY,
@@ -18,9 +18,6 @@ CREATE TABLE alternativas (
     id INT PRIMARY KEY,
     texto varchar(255) NOT NULL,
     id_questao INT NOT NULL,
+    correta BOOLEAN NOT NULL,
     FOREIGN KEY (id_questao) REFERENCES questoes(id)
 );
-
-DROP TABLE questoes;
-
-SHOW FIELDS FROM questoes;
